@@ -72,6 +72,6 @@ sudoku_win(SOL, Rows) :-
     blocks(D, E, F),
     blocks(G, H, I),
     win(B, C, D),
-    win(F, G, I),
+    win(F, G, H),
     domain(Rows),
     SOL = Rows.
