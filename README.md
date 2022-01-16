@@ -4,7 +4,7 @@ Solucionador de tableros de Sudoku, Sudoku Diagonal y Sudoku Win creado en Prolo
 Para que el programa se ejecute con normalidad es importante que se tenga instalado SWI-PROLOG en el dispositivo en que queramos ejecutar.
 
 ## Uso
-La forma de ejecución, si cumplimos con los requisitos de la instalación es extremadamente sencilla. En el repositorio se encontrarán dos archivos, `Sudoku.exe` y `prologSudoku.pl`. Basta con ejecutar el archivo `Sudoku.exe` y el programa se iniciará (Importante: Ambos ficheros deben estar en el mismo directorio).
+La forma de ejecución, si cumplimos con los requisitos de la instalación es extremadamente sencilla. En el repositorio se encontrarán dos archivos, `Sudoku.exe` y `\lib\prologSudoku.pl`. Basta con ejecutar el archivo `Sudoku.exe` y el programa se iniciará.
 
 ## Dependencias
 En caso de que estemos interesados en ejecutar el programa desde `mainWindow.py`, modificarlo o volver a compilar el .exe, es indispensable tener instaladas las siguientes dependencias.
