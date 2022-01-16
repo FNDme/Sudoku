@@ -8,7 +8,7 @@ El programa hace uso de Prolog, y por tanto, es requisito indispensable tener in
 El siguiente requisito es que el fichero .exe se encuentre en la misma carpeta que el fichero `prologSudoku.pl`. En caso contrario, la aplicación será incapaz de encontrar el fichero y no se ejecutará.
 
 ## Uso
-La forma de ejecución, si cumplimos con los requisitos de la instalación es extremadamente sencilla. En la carpeta dist se encontrarán dos archivos, `mainWindow.exe` y `prologSudoku.pl`. Basta con ejecutar el archivo mainWindow.exe y el programa se iniciará.
+La forma de ejecución, si cumplimos con los requisitos de la instalación es extremadamente sencilla. En el repositorio se encontrarán dos archivos, `Sudoku.exe` y `prologSudoku.pl`. Basta con ejecutar el archivo `Sudoku.exe` y el programa se iniciará (Importante: Ambos ficheros deben estar en el mismo directorio).
 
 ## Dependencias
 En caso de que estemos interesados en ejecutar el programa desde `mainWindow.py`, modificarlo o volver a compilar el .exe, es indispensable tener instaladas las siguientes dependencias.
