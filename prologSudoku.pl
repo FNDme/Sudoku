@@ -13,8 +13,8 @@ num(9).
 dom([]).
 dom([N|Ns]) :-	num(N), dom(Ns).
 
-domRows([]).
-domRows([Row|Rows]) :- dom(Row), domRows(Rows).
+domain([]).
+domain([Row|Rows]) :- dom(Row), domain(Rows).
 
 blocks([], [], []).
 blocks([N1,N2,N3|Ns1], [N4,N5,N6|Ns2], [N7,N8,N9|Ns3]) :-
@@ -33,45 +33,45 @@ win([_,A1,A2,A3,_,D1,D2,D3,_],[_,B1,B2,B3,_,E1,E2,E3,_],[_,C1,C2,C3,_,F1,F2,F3,_
 sudoku(SOL, Rows) :-
     length(Rows, 9),
     maplist(same_length(Rows), Rows),
-    append(Rows, Vs), Vs ins 1..9,
+    append(Rows, X), X ins 1..9,
     maplist(all_distinct, Rows),
     transpose(Rows, Columns),
     maplist(all_distinct, Columns),
-    Rows = [As,Bs,Cs,Ds,Es,Fs,Gs,Hs,Is],
-    blocks(As, Bs, Cs),
-    blocks(Ds, Es, Fs),
-    blocks(Gs, Hs, Is),
-    domRows(Rows),
+    Rows = [A,B,C,D,E,F,G,H,I],
+    blocks(A, B, C),
+    blocks(D, E, F),
+    blocks(G, H, I),
+    domain(Rows),
     SOL = Rows.
-
+    
 sudoku_diagonal(SOL, Rows) :-
     length(Rows, 9),
     maplist(same_length(Rows), Rows),
-    append(Rows, Vs), Vs ins 1..9,
+    append(Rows, X), X ins 1..9,
     maplist(all_distinct, Rows),
     transpose(Rows, Columns),
     maplist(all_distinct, Columns),
-    Rows = [As,Bs,Cs,Ds,Es,Fs,Gs,Hs,Is],
-    blocks(As, Bs, Cs),
-    blocks(Ds, Es, Fs),
-    blocks(Gs, Hs, Is),
-    diagonalsA(As,Bs,Cs,Ds,Es,Fs,Gs,Hs,Is),
-    diagonalsB(As,Bs,Cs,Ds,Es,Fs,Gs,Hs,Is),
-    domRows(Rows),
+    Rows = [A,B,C,D,E,F,G,H,I],
+    blocks(A, B, C),
+    blocks(D, E, F),
+    blocks(G, H, I),
+    diagonalsA(A,B,C,D,E,F,G,H,I),
+    diagonalsB(A,B,C,D,E,F,G,H,I),
+    domain(Rows),
     SOL = Rows.
 
 sudoku_win(SOL, Rows) :-
     length(Rows, 9),
     maplist(same_length(Rows), Rows),
-    append(Rows, Vs), Vs ins 1..9,
+    append(Rows, X), X ins 1..9,
     maplist(all_distinct, Rows),
     transpose(Rows, Columns),
     maplist(all_distinct, Columns),
-    Rows = [As,Bs,Cs,Ds,Es,Fs,Gs,Hs,Is],
-    blocks(As, Bs, Cs),
-    blocks(Ds, Es, Fs),
-    blocks(Gs, Hs, Is),
-    win(Bs, Cs, Ds),
-    win(Fs, Gs, Hs),
-    domRows(Rows),
+    Rows = [A,B,C,D,E,F,G,H,I],
+    blocks(A, B, C),
+    blocks(D, E, F),
+    blocks(G, H, I),
+    win(B, C, D),
+    win(F, G, I),
+    domain(Rows),
     SOL = Rows.
