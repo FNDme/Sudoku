@@ -1,9 +1,10 @@
 # Sudoku Solver - Windows
 Solucionador de tableros de Sudoku, Sudoku Diagonal y Sudoku Win creado en Prolog y usando la interfaz gráfica de la librería Tkinter para Python
+
 ## Instalación
 Para que el programa se ejecute con normalidad es importante que se tenga instalado SWI-PROLOG en el dispositivo en que queramos ejecutar.
 
-## Uso
+## Ejecución
 La forma de ejecución, si cumplimos con los requisitos de la instalación es extremadamente sencilla. En el repositorio se encontrarán dos archivos, `Sudoku.exe` y `\lib\prologSudoku.pl`. Basta con ejecutar el archivo `Sudoku.exe` y el programa se iniciará.
 
 ## Dependencias
