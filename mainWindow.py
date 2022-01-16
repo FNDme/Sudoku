@@ -1,10 +1,10 @@
+import os
+import sys
 from tkinter import Label, Tk, Entry, Button, Canvas, messagebox
 from tkinter.font import BOLD
 from functools import partial
 from pyswip import Prolog
 
-prolog = Prolog()
-prolog.consult("prologSudoku.pl")
 
 base = Tk()
 
@@ -23,6 +23,19 @@ global nSolutions
 solList = []
 whichSol = 0
 nSolutions = 0
+
+def resource_path(relative_path):
+    try:
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
+prolog = Prolog()
+path = resource_path("prologSudoku/prologSudoku.pl")
+path = path.replace("\\", "/")
+prolog.consult(resource_path(path))
 
 def boardFormat(tab):
     parameter = str(tab)
